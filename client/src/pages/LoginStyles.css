@@ -1,0 +1,232 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: Optima;
+    color: hsl(0, 0%, 11%);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.4;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.2;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2rem; /* 40px */
+  }
+  
+  h2 {
+    font-size: 2.125rem; /* 34px */
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  h4 {
+    font-size: 1.375rem; /* 22px */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin: 1.2rem;
+  }
+  
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+  }
+  
+  a {
+    color: hsl(0, 0%, 49%);
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+  
+  .login-form {
+    position: relative;
+    margin-top: 10rem;
+    background-color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  
+  .btn {
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375em;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: 0.2s;
+    will-change: transform;
+    outline: none;
+    background: #222;
+    color: hsl(0, 0%, 100%);
+    border: none;
+  }
+  
+  .btn:focus-visible {
+    outline: none;
+  }
+  
+  .btn:active {
+    transform: translateY(2px);
+  }
+  
+  .btn:hover {
+    background: rgb(201, 195, 195);
+    scale: 110%;
+    color: black;
+  }
+  
+  input {
+    margin: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375em;
+    font-size: 1.2em;
+    font-weight: 500;
+    /* border:none; */
+    border-color: rgb(189, 189, 189);
+  }
+  
+  .label-email {
+    color: #222;
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: block;
+  }
+  
+  .email-style {
+    color: #222;
+    font-family: Optima;
+    font-weight: 500;
+  }
+  
+  .email-box {
+    /* margin: 1rem; */
+  }
+  
+  .link-style {
+    color: #222;
+    background: rgb(201, 195, 195);
+    padding: 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  
+  .link-style:hover {
+    color: rgb(255, 255, 255);
+    background-color: #222;
+    scale: 110%;
+  }
+  
+  @media (min-width: 48rem) {
+    input {
+      margin: 1rem;
+      padding: 0.5rem 5.5rem;
+      border-radius: 0.375em;
+      font-size: 1.2em;
+      font-weight: 500;
+    }
+    .login-form {
+      position: relative;
+      margin-top: 10rem;
+      background-color: rgb(255, 255, 255);
+      /* margin-left: 10rem;
+      margin-right: 10rem; */
+      margin-left: 100px;
+      margin-right: 100px;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 9.5rem;
+    }
+  }
+  
+  @media (min-width: 80rem) {
+    .login-form {
+      position: relative;
+      margin-top: 10rem;
+      background-color: rgb(255, 255, 255);
+      /* margin-left: 10rem;
+      margin-right: 10rem; */
+      margin-left: 300px;
+      margin-right: 300px;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 9.5rem;
+    }
+  }
+  
+  @media (min-width: 140rem) {
+    .login-form {
+      position: relative;
+      margin-top: 10rem;
+      background-color: rgb(255, 255, 255);
+      /* margin-left: 10rem;
+      margin-right: 10rem; */
+      margin-left: 800px;
+      margin-right: 800px;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 5.5rem;
+    }
+  }
+  
+  @media (min-width: 180rem) {
+    .login-form {
+      position: relative;
+      margin-top: 10rem;
+      background-color: rgb(255, 255, 255);
+      /* margin-left: 10rem;
+      margin-right: 10rem; */
+      margin-left: 1200px;
+      margin-right: 1200px;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 5.5rem;
+    }
+  }
