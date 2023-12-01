@@ -1,0 +1,230 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: system-ui, sans-serif;
+    color: hsl(0, 0%, 11%);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.4;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.2;
+    color: #222;
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 2rem; /* 40px */
+  }
+  
+  h2 {
+    font-size: 2.125rem; /* 34px */
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  h4 {
+    font-size: 1.375rem; /* 22px */
+  }
+  
+  p {
+    font-size: 1.2rem;
+  }
+  
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+  
+  button,
+  input,
+  textarea,
+  select {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  textarea {
+    resize: vertical;
+    overflow: auto;
+    vertical-align: top;
+  }
+  
+  a {
+    color: hsl(0, 0%, 49%);
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  img,
+  video,
+  sv {
+    display: block;
+    max-width: 100%;
+  }
+  .card-btn {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375em;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: 0.2s;
+    will-change: transform;
+  }
+  
+  .card-btn:focus-visible {
+    outline: none;
+  }
+  
+  .card-btn:active {
+    transform: translateY(2px);
+  }
+  
+  .card-btn--primary {
+    background: #222;
+    /* box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15),
+      0 1px 3px hsla(0, 0%, 13%, 0.25), 0 2px 6px hsla(0, 0%, 15%, 0.1),
+      0 6px 10px -2px hsla(0, 0%, 11%, 0.25); */
+    color: hsl(0, 0%, 100%);
+  }
+  
+  .card-btn--primary:hover {
+    background: rgb(201, 195, 195);
+    /* box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15),
+      0 1px 2px hsla(0, 0%, 15%, 0.25), 0 1px 4px hsla(0, 0%, 17%, 0.1),
+      0 3px 6px -2px hsla(0, 0%, 22%, 0.25); */
+    scale: 110%;
+    color: black;
+  }
+  
+  /* .card-btn--primary:focus-visible {
+    box-shadow: inset 0 1px 0 hsla(0, 0%, 100%, 0.15),
+      0 1px 2px hsla(0, 0%, 20%, 0.25), 0 1px 4px hsla(0, 0%, 22%, 0.1),
+      0 3px 6px -2px hsla(0, 0%, 15%, 0.25), 0 0 0 2px hsl(0, 0%, 100%),
+      0 0 0 4px hsl(0, 0%, 45%);
+  } */
+  
+  .post {
+  }
+  
+  .post__label {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-size: 1.5rem;
+    color: hsl(240, 4%, 65%);
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+  }
+  
+  .post__label::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background-color: hsla(0, 0%, 15%, 0.1);
+  }
+  
+  .post__grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  
+  .post__grid > * {
+    min-width: 0;
+    grid-column-end: span 12;
+  }
+  
+  .post__content {
+    line-height: 1.6;
+  }
+  
+  .post__content > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 64rem) {
+    .post__label {
+      margin-bottom: 2rem;
+    }
+  
+    .post__grid {
+      gap: 0;
+    }
+  
+    .post__grid-item-1 {
+      grid-column-end: span 4;
+    }
+  
+    .post__grid-item-2 {
+      grid-column-start: 6;
+      grid-column-end: span 7;
+    }
+  }
+  
+  .card-container {
+    width: calc(100% - 3rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .card-max-width-adaptive-lg {
+    max-width: 32rem;
+  }
+  
+  @media (min-width: 48rem) {
+    .card-max-width-adaptive-lg {
+      max-width: 48rem;
+    }
+  }
+  
+  @media (min-width: 64rem) {
+    .card-max-width-adaptive-lg {
+      max-width: 64rem;
+    }
+  }
+  
+  @media (min-width: 80rem) {
+    .card-max-width-adaptive-lg {
+      max-width: 80rem;
+    }
+  }
+  
+  .card-position-relative {
+    position: relative;
+  }
+  
+  .card-z-index-1 {
+    z-index: 1;
+  }
+  
+  .card-margin-y-2xl {
+    margin-top: 8rem;
+    margin-bottom: 0;
+  }
+  
