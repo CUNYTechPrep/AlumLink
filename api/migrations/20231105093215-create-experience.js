@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Experience", {
+    await queryInterface.createTable("Experiences", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -33,7 +33,7 @@ module.exports = {
           notEmpty: true,
         },
         references: {
-          model: "User",
+          model: "Users",
           key: "id",
         },
       },
@@ -44,7 +44,7 @@ module.exports = {
           notEmpty: true,
         },
         references: {
-          model: "Employer",
+          model: "Employers",
           key: "id",
         },
       },
@@ -59,6 +59,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Experience");
+    await queryInterface.dropTable("Experiences");
   }
 };
