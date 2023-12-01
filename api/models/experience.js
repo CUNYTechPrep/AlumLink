@@ -1,19 +1,15 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class Experience extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
+  class Experiences extends Model {
+    
     static associate(models) {
-      // define association here
-      Experience.belongsTo(models.User, { foreignKey: "user_id" });
-      Experience.belongsTo(models.Employer, { foreignKey: "employer_id" });
+      Experiences.belongsTo(models.Users, { foreignKey: "user_id" });
+      Experiences.belongsTo(models.Employers, { foreignKey: "employer_id" });
     }
   }
-  Experience.init(
+
+  Experiences.init(
     {
       position: {
         allowNull: false,
@@ -39,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true,
         },
         references: {
-          model: "User",
+          model: "Users",
           key: "id",
         },
       },
@@ -50,15 +46,16 @@ module.exports = (sequelize, DataTypes) => {
           notEmpty: true,
         },
         references: {
-          model: "Employer",
+          model: "Employers",
           key: "id",
         },
       },
     },
     {
       sequelize,
-      modelName: "Experience",
+      modelName: "Experiences",
+      timestamps: true,
     }
   );
-  return Experience;
+  return Experiences;
 };
