@@ -12,13 +12,13 @@ module.exports = {
       first_name: {
         type: Sequelize.STRING,
         validate: {
-          len: [3, 100],
+          len: [2, 100],
         },
       },
       last_name: {
         type: Sequelize.STRING,
         validate: {
-          len: [3, 100],
+          len: [2, 100],
         },
       },
       gender: {
