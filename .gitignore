@@ -1,8 +1,7 @@
 api/node_modules
-api/.env/
-
 client/node_modules
 
 client/src/pages/UserProfile
 client/src/pages/UserProfileStyles
 
+.env
