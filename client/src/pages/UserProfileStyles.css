@@ -1,0 +1,13 @@
+
+.user-container {
+    position: static;
+    margin-top: 160px;
+}
+
+.box-wrapper {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-left: 45%;
+    margin-right: 45%;
+    box-align: center;
+}

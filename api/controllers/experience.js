@@ -14,6 +14,25 @@ async function createExperience(req, res) {
   }
 };
 
+router.get("/user_id/:user_id", async (req, res) => {
+  const { user_id } = req.params;
+  try {
+    const experience = await Experiences.findAll({
+      where: {
+        user_id: user_id
+      }
+    });
+
+    if (!experience) {
+      return res.status(404).json({ message: 'Experience information not found for this user' });
+    }
+
+    res.json(experience);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 router.get("/", getExperiences);
 async function getExperiences(req, res) {
   try {

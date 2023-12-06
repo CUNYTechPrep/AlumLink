@@ -34,6 +34,26 @@ async function getContactInfo(req, res) {
   }
 };
 
+router.get("/user_id/:user_id", async (req, res) => {
+  const { user_id } = req.params;
+
+  try {
+    const contactInfo = await Contact_infos.findOne({
+      where: {
+        user_id: user_id
+      }
+    });
+
+    if (!contactInfo) {
+      return res.status(404).json({ message: 'Contact information not found for this user' });
+    }
+
+    res.json(contactInfo);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+});
+
 router.put("/:id", updateContactInfo);
 async function updateContactInfo(req, res, next) {
   try {
