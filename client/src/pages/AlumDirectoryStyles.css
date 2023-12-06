@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 100px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    min-height: 70vh;
+  }
+  
+  .title2 {
+    position: relative;
+    margin-top: 160px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+    padding-bottom: 8px;
+    margin-right: 950px;
+  }
+  
+  .search-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 55px;
+    gap: 20px;
+  }
+  
+  .search-area input,
+  .search-area select {
+    height: 40px;
+    padding: 0 15px;
+    margin: 0 10px;
+    width: calc(100% / 5 - 20px); 
+    box-sizing: border-box;
+    border: 1px solid #222;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+   .search-area input::placeholder,
+   .search-ares select::placeholder {
+    font-size: 16px; 
+    color: #888; 
+  }
+  
+  .search-area select::placeholder{
+    color: #888; 
+  }
+  
+  .search, .clear {
+    width: 200px;
+    height: 35px;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+    font-family: Arial, sans-serif;
+    font-size: 16px; 
+    transition: all 0.3s ease; 
+  }
+  
+  .search {
+    background-color: #222;
+  }
+  
+  .search:hover {
+    background-color: #0056b3;
+  }
+  
+  .clear {
+    background-color: #222;
+  }
+  
+  .clear:hover {
+    background-color: #cc0000;
+  }
+  
+  .card-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .result-card {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 200px;
+    padding: 20px;
+    margin: 10px;
+    align-items: center;
+    border-radius: 2.5%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .result-card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); 
+    background-color: #f5f5f5;
+  }
+  
+  .result-link, .result-link:hover, .result-link:focus, .result-link:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+
