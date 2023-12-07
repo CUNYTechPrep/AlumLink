@@ -11,8 +11,8 @@ function Footer() {
        <div className="footer-section">
          <h6 className="footer-title">ABOUT</h6>
          <ul className="footer-links">
-           <li><a href="#">About-Us</a></li>
-           <li><a href="#">Contact-Us</a></li>
+           <li><a href="#">PlaceHolder</a></li>
+           <li><a href="#">PlaceHolder</a></li>
          </ul>
        </div>
 
@@ -20,8 +20,8 @@ function Footer() {
        <div className="footer-section">
          <h6 className="footer-title">FOLLOW US</h6>
          <ul className="footer-links">
-           <li><a href="#">Instagram</a></li>
-           <li><a href="#">Facebook</a></li>
+           <li><a href="#">Social</a></li>
+           <li><a href="#">Social</a></li>
          </ul>
        </div>
 

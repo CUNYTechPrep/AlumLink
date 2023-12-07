@@ -1,7 +1,4 @@
-# AlumLink 
-Alumlink is an alumni directory specifically designed for CUNY Law School. The app utilizes a registration process where users are invited to join via a magic link that enables them to register their information. It offers a search feature, allowing users to find past alumni based on various criteria. Additionally, Alumlink provides the functionality for users to update their own information, ensuring that the directory remains up to date and useful for its community.
-
-## Development Setup
+# AlumLink Development Setup
 Each user will need to do this on their local machine.
 
 ## Ensure you have PostgreSQL installed
@@ -47,19 +44,19 @@ npm install react-router-dom
 npm install styled-components
 npm install react-icons
 npm install axios
-npm install cors
 ```
 
 ### api-backend (terminal 1)
+- Command:
 ``` 
 cd api
 npm install
 npm run migrate:up
-npm run seed:up
 npm run dev
 ```
 
 ### react-client (terminal 2)
+- Command: 
    ```
   cd client
   npm install

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaPaperPlane, FaIdBadge, FaInfoCircle, FaUserCheck, FaTimes, FaSearch } from "react-icons/fa";
+import { FaPaperPlane, FaIdBadge, FaInfoCircle, FaUserCheck, FaTimes } from "react-icons/fa";
 import { HiHome, HiMenu } from "react-icons/hi";
 import { Link } from "react-router-dom"; // Import Link
 import "./NavBarStyles.css";
@@ -32,11 +32,6 @@ function NavBar() {
           </li>
           <li>
             <Link to="/directory">
-              <FaSearch /> Alum
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile:id">
               <FaIdBadge /> Alum
             </Link>
           </li>

@@ -37,12 +37,12 @@ function Login() {
           </div>
 
           <div className="btn-div">
-            <Button text="Request Magic Link" onClick={handleClick} />
+            <Button text="Request Magic Link ✨" onClick={handleClick} />
           </div>
 
           <div>
             <p>Don't have an account yet? Signing Up is a breeze!</p>
-            <Button text="Create Account" onClick={handleClick2} />
+            <Button text="Create an Account 🙌" onClick={handleClick2} />
           </div>
         </div>
       </Layout>
