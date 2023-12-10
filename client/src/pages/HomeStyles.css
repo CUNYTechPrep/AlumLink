@@ -1,69 +1,133 @@
-.title {
-    position: static;
-    margin-top: 160px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #222;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 8px;
+.custom-hero {
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding: 4.5rem 0;
+  background-color: hsl(240, 4%, 95%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: 8rem;
+  padding: 0.7rem 1rem;
+  padding-bottom: 5rem;
+}
+
+.custom-hero__label {
+  font-size: 0.9375rem;
+  color: hsla(0, 0%, 100%);
+  text-align: left;
+}
+
+.custom-hero--center {
+  text-align: center;
+}
+
+.custom-hero--center .custom-hero__cta {
+  justify-content: center;
+}
+
+.custom-hero--overlay-layer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  z-index: 1;
+}
+
+.custom-hero--overlay-layer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.custom-hero--full-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 64rem) {
+  .custom-hero {
+    padding: 7rem 0;
   }
-   .flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-    margin: 50px 20px;
+}
+
+.custom-card-margin-bottom-2xs {
+  margin-bottom: 0.75rem;
+}
+
+.custom-card-margin-bottom-xs {
+  margin-bottom: 1rem;
+}
+
+.custom-card-margin-bottom-sm {
+  margin-bottom: 1.5rem;
+}
+
+.custom-card-container {
+  width: calc(100% - 3rem);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-card-max-width-xs {
+  max-width: 32rem;
+}
+
+.custom-card-max-width-adaptive-sm,
+.custom-card-max-width-adaptive-md,
+.custom-card-max-width-adaptive-lg {
+  max-width: 32rem;
+}
+
+@media (min-width: 48rem) {
+  .custom-card-max-width-adaptive-sm,
+  .custom-card-max-width-adaptive-md,
+  .custom-card-max-width-adaptive-lg {
+    max-width: 48rem;
   }
-   .flex-item {
-    margin: 10px;
+}
+
+@media (min-width: 64rem) {
+  .custom-card-max-width-adaptive-md,
+  .custom-card-max-width-adaptive-lg {
+    max-width: 64rem;
   }
-   .btn {
-    background-color: #222;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 4px;
+}
+
+@media (min-width: 85.5rem) {
+  .custom-card-max-width-adaptive-lg {
+    max-width: 80rem;
   }
-   .btn:hover {
-    background-color: white;
-    color: black;
-    border: 2px solid #222;
-  }
-   .law-school-image {
-    border-radius: 15px;
-    width: 100%;
-    height: auto;
-  }
-  
-   @media screen and (min-width: 768px) {
-    .title {
-      position: absolute;
-      top: 0px;
-      left: 50px;
-      font-size: 24px;
-    }
-     .flex-container {
-      margin-top: 200px;
-      margin-left: 150px;
-      margin-right: 150px;
-    }
-     .law-school-image {
-      width: 700px;
-      height: 350px;
-    }
-  }
-   @media screen and (min-width: 1024px) {
-     .flex-container {
-      margin-top: 100px;
-    }
-  }
- 
+}
+
+.custom-card-flex {
+  display: flex;
+}
+
+.custom-card-justify-end {
+  justify-content: end;
+}
+
+.custom-card-line-height-lg {
+  line-height: 1.58;
+}
+
+.custom-card {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.tagline{
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  font-weight: 700;
+}
+.home_para{
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 1rem;
+  padding: 2rem;
+}

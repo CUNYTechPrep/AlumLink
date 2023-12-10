@@ -11,8 +11,8 @@ function Footer() {
        <div className="footer-section">
          <h6 className="footer-title">ABOUT</h6>
          <ul className="footer-links">
-           <li><a href="#">About-Us</a></li>
-           <li><a href="#">Contact-Us</a></li>
+           <li>About-Us</li>
+           <li>Contact-Us</li>
          </ul>
        </div>
 
@@ -20,8 +20,8 @@ function Footer() {
        <div className="footer-section">
          <h6 className="footer-title">FOLLOW US</h6>
          <ul className="footer-links">
-           <li><a href="#">Instagram</a></li>
-           <li><a href="#">Facebook</a></li>
+           <li>Instagram</li>
+           <li>Facebook</li>
          </ul>
        </div>
 
@@ -29,8 +29,8 @@ function Footer() {
        <div className="footer-section">
          <h6 className="footer-title">LEGAL</h6>
          <ul className="footer-links">
-           <li><a href="#">Privacy Policy</a></li>
-           <li><a href="#">Terms Conditions</a></li>
+           <li>Privacy Policy</li>
+           <li>Terms Conditions</li>
          </ul>
        </div>
 
@@ -41,10 +41,10 @@ function Footer() {
      <div className="footer-bottom">
        <p>© 2023 AlumLink</p>
        <div className="footer-socials">
-         <a href="#" className="social-icon facebook"><FaFacebook /></a>
-         <a href="#" className="social-icon instagram"><FaInstagram /></a>
-         <a href="#" className="social-icon twitter"><FaTwitter /></a>
-         <a href="#" className="social-icon github"><FaGithub /></a>
+         <a href="" className="social-icon facebook"><FaFacebook /></a>
+         <a href="" className="social-icon instagram"><FaInstagram /></a>
+         <a href="" className="social-icon twitter"><FaTwitter /></a>
+         <a href="" className="social-icon github"><FaGithub /></a>
        </div>
      </div>
 

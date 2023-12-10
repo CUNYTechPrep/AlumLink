@@ -1,130 +1,130 @@
 * {
-    font-family: "Optima";
-  }
-  
-  .header {
-    position: relative;
-    z-index: 2; /* I did this to ensure the header is above other elements */
-  }
-  
+  font-family: "Optima";
+}
+
+.header {
+  position: relative;
+  z-index: 2; /* I did this to ensure the header is above other elements */
+}
+
+.NavbarItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0 30px;
+  background-color: #222;
+  box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+  width: 95%;
+  height: 88px;
+  border-radius: 13px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 100; /* I did this to ensure the navbar is above other elements */
+  margin-top: 30px;
+}
+
+.NavbarItems ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.NavbarItems li {
+  margin-right: 2px;
+}
+
+.NavbarItems a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  white-space: nowrap;
+  border-radius: 4px;
+}
+
+.NavbarItems a:hover {
+  background-color: rgb(201, 195, 195);
+  transition: all 0.6s ease-in-out;
+  color: black;
+}
+
+.NavbarItems a > * {
+  margin-right: 1px;
+}
+
+.menu-icons {
+  display: none;
+}
+
+@media screen and (max-width: 690px) {
   .NavbarItems {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 1.2rem;
-    padding: 0 30px;
-    background-color: #222;
-    box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
-    width: 95%;
-    height: 88px;
-    border-radius: 13px;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    z-index: 1; /* I did this to ensure the navbar is above other elements */
-    margin-top: 30px;
+    z-index: 99;
   }
-  
-  .NavbarItems ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+
+  .nav-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out;
+    margin-top: 0;
   }
-  
-  .NavbarItems li {
-    margin-right: 2px;
-  }
-  
-  .NavbarItems a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0.7rem 1rem;
-    white-space: nowrap;
-    border-radius: 4px;
-  }
-  
-  .NavbarItems a:hover {
-    background-color: rgb(201, 195, 195);
-    transition: all 0.6s ease-in-out;
-    color: black;
-  }
-  
-  .NavbarItems a > * {
-    margin-right: 1px;
-  }
-  
+
   .menu-icons {
-    display: none;
+    display: block;
   }
-  
-  @media screen and (max-width: 690px) {
-    .NavbarItems {
-      z-index: 99;
-    }
-  
-    .nav-menu {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.6s ease-in-out;
-      margin-top: 0;
-    }
-  
-    .menu-icons {
-      display: block;
-    }
-  
-    .nav-menu {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      background-color: white;
-      box-shadow: 0 8px 32px 0 rgba(119, 102, 102, 0.37);
-      backdrop-filter: blur(20px);
-      border-radius: 13px;
-      width: 100%;
-      height: auto;
-      position: absolute;
-      top: 88px;
-      left: 0;
-      align-items: stretch;
-      padding: 80px 0 30px 0;
-      margin: 0;
-      z-index: -1;
-    }
-  
-    .NavbarItems ul {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .NavbarItems li {
-      margin-right: 0;
-    }
-  
-    .NavbarItems a {
-      display: block;
-      width: 100%;
-      padding: 2rem;
-      color: #222;
-    }
-  
-    .NavbarItems a:hover {
-      /* background: rgba(255, 255, 255, 0.25); */
-      background: rgb(236, 235, 235);
-      backdrop-filter: blur(20px);
-    }
-  
-    .active {
-      max-height: none;
-    }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    box-shadow: 0 8px 32px 0 rgba(119, 102, 102, 0.37);
+    backdrop-filter: blur(20px);
+    border-radius: 13px;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    align-items: stretch;
+    padding: 80px 0 30px 0;
+    margin: 0;
+    z-index: -1;
   }
-  
-  .logotext {
-    color: white;
-    font-size: 2rem;
+
+  .NavbarItems ul {
+    display: flex;
+    flex-direction: column;
   }
+
+  .NavbarItems li {
+    margin-right: 0;
+  }
+
+  .NavbarItems a {
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    color: #222;
+  }
+
+  .NavbarItems a:hover {
+    /* background: rgba(255, 255, 255, 0.25); */
+    background: rgb(236, 235, 235);
+    backdrop-filter: blur(20px);
+  }
+
+  .active {
+    max-height: none;
+  }
+}
+
+.logotext {
+  color: white;
+  font-size: 2rem;
+}
