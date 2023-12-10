@@ -1,11 +1,11 @@
 .footer {
   background-color: #222;
-  font-family: Arial, sans-serif;
+  font-family: Optima;
   color: white;
-  margin-top: 75px;
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
 
 .footer-content {
@@ -14,6 +14,7 @@
   flex-wrap: wrap;
   border-bottom: 1px solid #E5E7EB;
   font-size: 0.85rem;
+  padding: 1rem;
 }
 
 .footer-section {
