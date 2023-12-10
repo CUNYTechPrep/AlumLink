@@ -1,13 +1,189 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: Optima;
+    color: hsl(0, 0%, 11%);
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.4;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.2;
+    color: #222;
+    /* font-weight: 300; */
+  }
+  
+  h1 {
+    font-size: 2rem; /* 40px */
+  }
+  
+  h2 {
+    font-size: 2.125rem; /* 34px */
+  }
+  
+  h3 {
+    font-size: 1.75rem; /* 28px */
+  }
+  
+  h4 {
+    font-size: 1.375rem; /* 22px */
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin: 1.2rem;
+  }
 
 .user-container {
-    position: static;
-    margin-top: 160px;
-}
-
-.box-wrapper {
-    border: 1px solid #000;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    margin-top: 10rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    
+  }
+  
+  .box-wrapper {
+    background-color: #f0f0f0;
     padding: 10px;
-    margin-left: 45%;
-    margin-right: 45%;
-    box-align: center;
-}
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+  }
+  
+  .card-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* .result-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+  } */
+  
+  .no-results-message {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+  }
+  
+  /* Add more styles as needed for other elements */
+  
+  @media (min-width: 58rem) {
+    .user-container {
+      margin: 10rem auto; /* Center the container */
+      background-color: rgb(255, 255, 255);
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 9.5rem;
+    }
+  }
+  
+  @media (min-width: 80rem) {
+    .user-container {
+      margin: 10rem auto; /* Center the container */
+      background-color: rgb(255, 255, 255);
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 9.5rem;
+    }
+  }
+  
+  @media (min-width: 140rem) {
+    .user-container {
+      margin: 10rem auto; /* Center the container */
+      background-color: rgb(255, 255, 255);
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 5.5rem;
+    }
+  }
+  
+  @media (min-width: 180rem) {
+    .user-container {
+      margin: 10rem auto; /* Center the container */
+      background-color: rgb(255, 255, 255);
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 15px rgba(41, 27, 27, 0.5);
+      padding-bottom: 5.5rem;
+    }
+  }
+
+  .name{
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 2rem;
+  }
+  
+  .headline{
+    font-weight: 600;
+  }
+
+  .profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .profile-picture {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #000000; 
+  }
+
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cover-photo {
+    width: 100%;
+    height: 200px; /* Adjust the height of the cover photo */
+    background-color: #333; /* Set the background color or add an image */
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .cover-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the image while maintaining aspect ratio */
+  }
+  
+  .map{
+    margin: 1rem;
+  }
+
+  .basic{
+    font-weight: 500;
+  }

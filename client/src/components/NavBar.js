@@ -32,14 +32,14 @@ function NavBar() {
           </li>
           <li>
             <Link to="/directory">
-              <FaSearch /> Alum
+              <FaSearch /> Alum Search
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/profile:id">
-              <FaIdBadge /> Alum
+              <FaIdBadge /> Profile 
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/about">
               <FaInfoCircle /> About

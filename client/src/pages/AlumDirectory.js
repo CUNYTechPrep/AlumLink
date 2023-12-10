@@ -3,6 +3,7 @@ import './AlumDirectoryStyles.css';
 import Layout from '../components/Layout';
 import { Link } from "react-router-dom";
 import axios from 'axios'; 
+import Button from "../components/Button";
 
 function AlumDirectory() {
     const [firstName, setFirstName] = useState('');
@@ -76,8 +77,10 @@ function AlumDirectory() {
                     </div>
 
                     <div className='buttons-container'>
-                        <button onClick={handleSearch} className="search">Search</button>
-                        <button onClick={handleClear} className="clear">Clear</button>
+                        {/* <button onClick={handleSearch} className="search">Search</button>
+                        <button onClick={handleClear} className="clear">Clear</button> */}
+                        <Button text="Clear" onClick={handleClear} />
+                        <Button text="Search" onClick={handleSearch} />
                     </div>
 
                     <div className='card-item'>
