@@ -16,7 +16,7 @@ html {
   h4 {
     line-height: 1.2;
     color: #222;
-    font-weight: 300;
+    /* font-weight: 300; */
   }
   
   h1 {
@@ -182,4 +182,8 @@ html {
   
   .map{
     margin: 1rem;
+  }
+
+  .basic{
+    font-weight: 500;
   }

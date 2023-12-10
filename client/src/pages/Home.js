@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
-import './HomeStyles.css';
+import "./HomeStyles.css";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
 import { FaPaperPlane } from "react-icons/fa";
 
-
-const HomePage = () => {
+const Home = () => {
   const backgroundImageUrl =
     "https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 
@@ -15,10 +14,11 @@ const HomePage = () => {
       <Layout>
         <section
           className="custom-hero custom-hero--center custom-hero--overlay-layer "
-          style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-        >
+          style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
           <div className="custom-card-container custom-card-max-width-adaptive-sm home_para">
-            <div className="custom-hero__label custom-card-margin-bottom-2xs">AlumLink</div>
+            <div className="custom-hero__label custom-card-margin-bottom-2xs">
+              AlumLink
+            </div>
 
             <h1 className="custom-card-margin-bottom-xs tagline">
               Connecting Minds, Igniting Possibilities: Embrace the Power of
@@ -46,4 +46,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;

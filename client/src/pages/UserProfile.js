@@ -103,23 +103,26 @@ function UserProfilePage() {
           <h1 className="headline">
             Bio: {userData.bio ? userData.bio : "---"}
           </h1>
-          <h1>Class of: {userData.class_year ? userData.class_year : "---"}</h1>
-                  <h1>
-                      
+          <h1 className="basic">
+            Class of: {userData.class_year ? userData.class_year : "---"}
+          </h1>
+          <h1 className="basic">
             Business Email: {userData.RE_email ? userData.RE_email : "---"}
           </h1>
-          <h1>
+          <h1 className="basic">
             Personal Email: {userData.RE_email ? userData.RE_email : "---"}
           </h1>
-          <h1>Gender Identity: {userData.gender ? userData.gender : "---"}</h1>
-          <h1>
+          <h1 className="basic">
+            Gender Identity: {userData.gender ? userData.gender : "---"}
+          </h1>
+          <h1 className="basic">
             Mobile:{" "}
             {userContactInfo.phone ? userContactInfo.phone : "(347)-555-7777"}
           </h1>
-          <h1>
+          <h1 className="basic">
             Work: {userData.work ? userData.work : "ext-1001 (347)-888-2222"}
           </h1>
-          <h1>
+          <h1 className="basic">
             DOB:{" "}
             {userContactInfo.dob
               ? userContactInfo.dob.substring(
@@ -128,9 +131,11 @@ function UserProfilePage() {
                 )
               : "02/05/1985"}
           </h1>
-          <h1>{userContactInfo.address}</h1>
-          <h1>Practice Location: City Hall, NYC, NY</h1>
-          <h1>Employed at: Nelson & Murdock: Attorneys at Law</h1>
+          <h1 className="basic">{userContactInfo.address}</h1>
+          <h1 className="basic">Practice Location: City Hall, NYC, NY</h1>
+          <h1 className="basic">
+            Employed at: Nelson & Murdock: Attorneys at Law
+          </h1>
           <div className="card-item">
             {employerData && userExperience && userExperience.length > 0 ? (
               userExperience.map((experience, index) => (
