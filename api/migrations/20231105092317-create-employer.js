@@ -29,7 +29,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
         validate: {
-          len: [6, 50],
+          len: [5, 50],
           notEmpty: true,
         },
       },
