@@ -1,0 +1,69 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: hsl(0, 0%, 100%);
+    font-family: Optima;
+    color: hsl(0, 0%, 11%);
+    font-size: 1.125rem; /* 18px /
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+    line-height: 1.2;
+    color: #222;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2rem; / 40px /
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 1.2rem;
+}
+
+button, input, textarea, select {
+    background-color: transparent;
+    border-radius: 0;
+    color: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+a {
+    color: hsl(0, 0%, 49%);
+}
+
+.signup-form {
+    position: relative;
+    margin-top: 10rem;
+    background-color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.btn {
+    / ... (Same as in the original CSS) ... /
+}
+
+input {
+    / ... (Same as in the original CSS) ... */
+}
+
+.label-email, .label-password, .label-firstname, .label-lastname {
+    color: #222;
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: block;
+}
+
+.firstname-style, .lastname-style, .email-style {
+    color: #222;
+    font-family: Optima;
+    font-weight: 500;
+}

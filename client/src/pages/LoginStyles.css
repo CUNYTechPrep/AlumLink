@@ -129,7 +129,8 @@ html {
     border-color: rgb(189, 189, 189);
   }
   
-  .label-email {
+  .label-email,
+  .label-password {
     color: #222;
     font-weight: 600;
     font-size: 1.3rem;
@@ -163,7 +164,7 @@ html {
   @media (min-width: 48rem) {
     input {
       margin: 1rem;
-      padding: 0.5rem 5.5rem;
+      padding: 0.25rem 5.5rem;
       border-radius: 0.375em;
       font-size: 1.2em;
       font-weight: 500;

@@ -37,15 +37,6 @@ function UserProfilePage() {
       }
     };
 
-    // const fetchExperience = async () => {
-    //     try {
-    //         const response = await axios.get(`http://localhost:8080/api/experience/user_id/${id}`);
-    //         setUserExperience(response.data);
-    //         console.log(response.data);
-    //     } catch (error) {
-    //         console.error('Error fetching contact information:', error);
-    //     }
-    // }
     const fetchExperience = async () => {
       try {
         const response = await axios.get(
