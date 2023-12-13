@@ -1,13 +1,13 @@
 "use strict";
 const { Model } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
   class Employers extends Model {
-    
     static associate(models) {
       Employers.hasMany(models.Experiences, { foreignKey: "employer_id" });
     }
   }
-  
+
   Employers.init(
     {
       name: {
@@ -17,6 +17,12 @@ module.exports = (sequelize, DataTypes) => {
           len: [2, 100],
           notEmpty: true,
         },
+        get() {
+          return this.getDataValue("name");
+        },
+        set(value) {
+          this.setDataValue("name", value);
+        },
       },
       address: {
         allowNull: false,
@@ -24,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [3, 150],
           notEmpty: true,
+        },
+        get() {
+          return this.getDataValue("address");
+        },
+        set(value) {
+          this.setDataValue("address", value);
         },
       },
       zip_code: {
@@ -33,6 +45,12 @@ module.exports = (sequelize, DataTypes) => {
           len: [5, 50],
           notEmpty: true,
         },
+        get() {
+          return this.getDataValue("zip_code");
+        },
+        set(value) {
+          this.setDataValue("zip_code", value);
+        },
       },
       city: {
         allowNull: false,
@@ -40,6 +58,12 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [1, 100],
           notEmpty: true,
+        },
+        get() {
+          return this.getDataValue("city");
+        },
+        set(value) {
+          this.setDataValue("city", value);
         },
       },
       state: {
@@ -49,8 +73,22 @@ module.exports = (sequelize, DataTypes) => {
           len: [2, 100],
           notEmpty: true,
         },
+        get() {
+          return this.getDataValue("state");
+        },
+        set(value) {
+          this.setDataValue("state", value);
+        },
       },
-      image_path: DataTypes.STRING,
+      image_path: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("image_path") || "default-image-path.jpg";
+        },
+        set(value) {
+          this.setDataValue("image_path", value);
+        },
+      },
     },
     {
       sequelize,
