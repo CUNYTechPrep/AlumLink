@@ -1,3 +1,8 @@
+/**
+ * Express server configuration and startup.
+ * @module app
+ */
+
 const express = require("express");
 const app = express();
 const path = require("path");
@@ -19,6 +24,12 @@ if (process.env.NODE_ENV === "production") {
   });
 }; 
  
+/**
+ * Starts the server and listens on the specified port.
+ * @async
+ * @function startServer
+ * @returns {Promise<void>} A promise that resolves when the server starts successfully.
+ */
 const startServer = async () => {
   try {
     app.listen(PORT, () => console.log(`Listening on ${PORT}`));

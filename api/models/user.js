@@ -3,6 +3,11 @@ const { Model } = require("sequelize");
 const bcrypt = require("bcryptjs");
 
 module.exports = (sequelize, DataTypes) => {
+  /**
+   * Represents a user in the system.
+   * @class
+   * @extends Model
+   */
   class Users extends Model {
     static associate(models) {
       Users.hasOne(models.Contact_infos, { foreignKey: "user_id" });

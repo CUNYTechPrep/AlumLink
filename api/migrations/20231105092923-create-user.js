@@ -1,6 +1,17 @@
+/**
+ * @file Migration script for creating the "Users" table in the database.
+ * @module migrations/20231105092923-create-user
+ */
+
 "use strict";
 
 module.exports = {
+  /**
+   * Executes the migration to create the "Users" table.
+   * @param {Object} queryInterface - The query interface object provided by Sequelize.
+   * @param {Object} Sequelize - The Sequelize object.
+   * @returns {Promise<void>} A promise that resolves when the migration is complete.
+   */
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable("Users", {
       id: {
@@ -73,6 +84,12 @@ module.exports = {
     });
   },
 
+  /**
+   * Executes the migration to drop the "Users" table.
+   * @param {Object} queryInterface - The query interface object provided by Sequelize.
+   * @param {Object} Sequelize - The Sequelize object.
+   * @returns {Promise<void>} A promise that resolves when the migration is complete.
+   */
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("Users");
   },

@@ -1,31 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Auth from "../services/auth";
+import { useAuth } from "../contexts/AuthContext"; // Import useAuth hook
 import "./LoginStyles.css";
 import Layout from "../components/Layout";
-import Button from "../components/Button";
+import AuthButton from "../components/Button";
 
 function Login() {
   const [RE_email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { login, flashMessage, setFlashMessage } = useAuth(); // Destructure from useAuth
   const navigate = useNavigate();
 
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      await Auth.authenticate(RE_email, password);
-      navigate("/");
+      await login(RE_email, password); // Use login function from context
+      navigate("/"); // Redirect to the home page after successful login
     } catch (error) {
-      alert(
+      setFlashMessage(
         "Login failed: " +
           (error.response ? error.response.data.message : error.message)
       );
+      navigate("/Login");
     }
   };
 
   return (
     <Layout>
       <form className="login-form" onSubmit={handleLogin}>
+        {flashMessage && (
+          <div className="alert alert-danger" role="alert">
+            {flashMessage}
+          </div>
+        )}
+
         <h1>Ready to get Started?</h1>
         <p>Enter your email and password to log in.</p>
 
@@ -52,12 +60,12 @@ function Login() {
         </div>
 
         <div className="btn-div">
-          <Button type="submit" text="Login" />
+          <AuthButton type="submit" text="Login" />
         </div>
 
         <p>Don't have an account yet? Signing Up is a breeze!</p>
         <Link to="/signup">
-          <Button text="Create Account" />
+          <AuthButton text="Create Account" />
         </Link>
       </form>
     </Layout>

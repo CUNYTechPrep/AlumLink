@@ -14,7 +14,6 @@ const { Model } = require("sequelize");
  */
 module.exports = (sequelize, DataTypes) => {
   class Contact_infos extends Model {
-    
     /**
      * Establishes an association with the Users model.
      * @static
@@ -27,13 +26,69 @@ module.exports = (sequelize, DataTypes) => {
 
   Contact_infos.init(
     {
-      email: DataTypes.STRING,
-      phone: DataTypes.STRING,
-      dob: DataTypes.DATE,
-      address: DataTypes.STRING,
-      zip_code: DataTypes.STRING,
-      city: DataTypes.STRING,
-      state: DataTypes.STRING,
+      email: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("email");
+        },
+        set(value) {
+          this.setDataValue("email", value);
+        },
+      },
+      phone: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("phone");
+        },
+        set(value) {
+          this.setDataValue("phone", value);
+        },
+      },
+      dob: {
+        type: DataTypes.DATE,
+        get() {
+          return this.getDataValue("dob");
+        },
+        set(value) {
+          this.setDataValue("dob", value);
+        },
+      },
+      address: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("address");
+        },
+        set(value) {
+          this.setDataValue("address", value);
+        },
+      },
+      zip_code: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("zip_code");
+        },
+        set(value) {
+          this.setDataValue("zip_code", value);
+        },
+      },
+      city: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("city");
+        },
+        set(value) {
+          this.setDataValue("city", value);
+        },
+      },
+      state: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("state");
+        },
+        set(value) {
+          this.setDataValue("state", value);
+        },
+      },
       user_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
@@ -43,6 +98,12 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: "Users",
           key: "id",
+        },
+        get() {
+          return this.getDataValue("user_id");
+        },
+        set(value) {
+          this.setDataValue("user_id", value);
         },
       },
     },

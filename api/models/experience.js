@@ -1,8 +1,24 @@
+/**
+ * @fileoverview This file contains the definition of the Experiences model.
+ * @module models/experience
+ */
+
 "use strict";
+
 const { Model } = require("sequelize");
+
+/**
+ * Represents the Experiences model.
+ * @class
+ * @extends Model
+ */
 module.exports = (sequelize, DataTypes) => {
   class Experiences extends Model {
-    
+    /**
+     * Establishes associations with other models.
+     * @static
+     * @param {object} models - The models object.
+     */
     static associate(models) {
       Experiences.belongsTo(models.Users, { foreignKey: "user_id" });
       Experiences.belongsTo(models.Employers, { foreignKey: "employer_id" });
@@ -18,16 +34,44 @@ module.exports = (sequelize, DataTypes) => {
           len: [2, 100],
           notEmpty: true,
         },
+        get() {
+          return this.getDataValue("position");
+        },
+        set(value) {
+          this.setDataValue("position", value);
+        },
       },
-      description: DataTypes.STRING,
+      description: {
+        type: DataTypes.STRING,
+        get() {
+          return this.getDataValue("description");
+        },
+        set(value) {
+          this.setDataValue("description", value);
+        },
+      },
       start_date: {
         allowNull: false,
         type: DataTypes.DATE,
         validate: {
           notEmpty: true,
         },
+        get() {
+          return this.getDataValue("start_date");
+        },
+        set(value) {
+          this.setDataValue("start_date", value);
+        },
       },
-      end_date: DataTypes.DATE,
+      end_date: {
+        type: DataTypes.DATE,
+        get() {
+          return this.getDataValue("end_date");
+        },
+        set(value) {
+          this.setDataValue("end_date", value);
+        },
+      },
       user_id: {
         allowNull: false,
         type: DataTypes.INTEGER,
@@ -37,6 +81,12 @@ module.exports = (sequelize, DataTypes) => {
         references: {
           model: "Users",
           key: "id",
+        },
+        get() {
+          return this.getDataValue("user_id");
+        },
+        set(value) {
+          this.setDataValue("user_id", value);
         },
       },
       employer_id: {
@@ -49,6 +99,12 @@ module.exports = (sequelize, DataTypes) => {
           model: "Employers",
           key: "id",
         },
+        get() {
+          return this.getDataValue("employer_id");
+        },
+        set(value) {
+          this.setDataValue("employer_id", value);
+        },
       },
     },
     {
@@ -57,5 +113,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
     }
   );
+
   return Experiences;
 };

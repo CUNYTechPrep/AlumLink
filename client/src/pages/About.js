@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./AboutStyles.css";
 import Layout from "../components/Layout";
 import { FaPaperPlane } from "react-icons/fa";
+import Auth from "../services/auth"; // Import Auth service
 
 function About() {
   return (
@@ -50,18 +51,14 @@ function About() {
                     continues with us.
                   </p>
 
-                  <p> 
-                    <Link to="/directory">
-                    <a className="card-btn card-btn--primary" href="#0">
+                  <p>
+                    <Link to={Auth.isAuthenticated ? "/directory" : "/login"}>
+                      <span className="card-btn card-btn--primary">
                         Let's Link &nbsp;
                         <FaPaperPlane />
-                    </a>
+                      </span>
                     </Link>
                   </p>
-
-                  <br />
-                  <br />
-                  <br />
                 </div>
               </div>
             </div>

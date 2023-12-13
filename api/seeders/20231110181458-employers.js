@@ -1,5 +1,16 @@
+/**
+ * @fileoverview Seeder file for populating the Employers table in the database.
+ * @module seeders/20231110181458-employers
+ */
+
 "use strict";
 
+/**
+ * Populates the Employers table with initial data.
+ * @param {Object} queryInterface - The Sequelize Query Interface.
+ * @param {Object} Sequelize - The Sequelize library.
+ * @returns {Promise<void>} A Promise that resolves when the data is inserted.
+ */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     const employers = [
@@ -44,6 +55,12 @@ module.exports = {
     await queryInterface.bulkInsert("Employers", employers, {});
   },
 
+  /**
+   * Deletes all data from the Employers table.
+   * @param {Object} queryInterface - The Sequelize Query Interface.
+   * @param {Object} Sequelize - The Sequelize library.
+   * @returns {Promise<void>} A Promise that resolves when the data is deleted.
+   */
   down: async (queryInterface, Sequelize) => {
     await queryInterface.bulkDelete("Employers", null, {});
   },

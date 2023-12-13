@@ -1,3 +1,8 @@
+
+/**
+ * Connects to the database using the provided configuration.
+ * @returns {Promise<void>} A promise that resolves when the connection is established successfully.
+ */
 const db = require("../models");
 const { Sequelize } = require("sequelize");
 require("dotenv").config();
@@ -17,7 +22,7 @@ const connectToDatabase = async () => {
     await sequelize.authenticate();
     console.log("Connection has been established successfully.");
     // Uncomment the line below to sync the database models
-    await db.sequelize.sync({ force: false }); // Be careful with the 'force' option
+    //await db.sequelize.sync({ force: false }); // Be careful with the 'force' option
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }

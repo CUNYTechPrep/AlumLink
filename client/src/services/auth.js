@@ -30,7 +30,7 @@ async authenticate(RE_email, password) {
     }
 },
   signout(cb) {
-    return fetch("/api/auth/logout", {
+    return fetch("http://localhost:8080/api/auth/logout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ async authenticate(RE_email, password) {
         if (!response.ok) {
           throw new Error("Logout Failed");
         }
-
+        
         return response.json();
       })
       .then((body) => {
