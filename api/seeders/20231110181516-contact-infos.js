@@ -18,7 +18,7 @@ module.exports = {
     const contactInfos = [];
   
     // Loop through insertedUsers to create associated ContactInfo
-    for (let i = 0; i < 6; i++) {
+    for (let i = 1; i < 7; i++) {
       // Create a ContactInfo associated with the user
       contactInfos.push({
         user_id: i + 1,
