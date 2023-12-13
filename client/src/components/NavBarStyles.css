@@ -36,6 +36,14 @@
 
 .NavbarItems li {
   margin-right: 2px;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  white-space: nowrap;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .NavbarItems a {
@@ -127,4 +135,15 @@
 .logotext {
   color: white;
   font-size: 2rem;
+}
+
+.signout{
+  background-color: rgb(201, 195, 195);
+  color: black;
+  border-radius: 8px;
+}
+
+.signout:hover{
+  background-color: white;
+  color: black;
 }
