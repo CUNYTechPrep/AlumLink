@@ -73,7 +73,7 @@ function NavBar() {
               </Link>
             </li>
           ) : (
-            <li onClick={handleSignOut}>
+            <li onClick={handleSignOut} className="signout">
               <FaUserCheck /> Sign Out
             </li>
           )}
