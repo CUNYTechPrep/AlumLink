@@ -1,8 +1,24 @@
+/**
+ * @fileoverview This file contains the definition of the Experiences model.
+ * @module models/experience
+ */
+
 "use strict";
+
 const { Model } = require("sequelize");
 
+/**
+ * Represents the Experiences model.
+ * @class
+ * @extends Model
+ */
 module.exports = (sequelize, DataTypes) => {
   class Experiences extends Model {
+    /**
+     * Establishes associations with other models.
+     * @static
+     * @param {object} models - The models object.
+     */
     static associate(models) {
       Experiences.belongsTo(models.Users, { foreignKey: "user_id" });
       Experiences.belongsTo(models.Employers, { foreignKey: "employer_id" });
@@ -97,5 +113,6 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: true,
     }
   );
+
   return Experiences;
 };

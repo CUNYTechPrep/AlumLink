@@ -1,6 +1,16 @@
 'use strict';
-/** @type {import('sequelize-cli').Migration} */
+
+/**
+ * Represents a migration for creating the "Employers" table.
+ * @type {import('sequelize-cli').Migration}
+ */
 module.exports = {
+  /**
+   * Executes the migration to create the "Employers" table.
+   * @param {import('sequelize').QueryInterface} queryInterface - The Sequelize Query Interface.
+   * @param {import('sequelize').Sequelize} Sequelize - The Sequelize instance.
+   * @returns {Promise<void>} A promise that resolves when the migration is complete.
+   */
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("Employers", {
       id: {
@@ -60,6 +70,12 @@ module.exports = {
       },
     });
   },
+  /**
+   * Executes the migration to drop the "Employers" table.
+   * @param {import('sequelize').QueryInterface} queryInterface - The Sequelize Query Interface.
+   * @param {import('sequelize').Sequelize} Sequelize - The Sequelize instance.
+   * @returns {Promise<void>} A promise that resolves when the migration is complete.
+   */
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable("Employers");
   }

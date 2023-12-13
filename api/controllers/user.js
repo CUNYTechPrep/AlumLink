@@ -1,9 +1,23 @@
+/**
+ * Express router for user-related operations.
+ * @module controllers/user
+ */
+
 const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { Users, Contact_infos } = db;
 const passport = require("../middlewares/authenticationMiddleware");
 
+/**
+ * Create a new user with contact information.
+ * @name POST /
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Object} - Newly created user object
+ */
 router.post("/", createUserWithContactInfo);
 async function createUserWithContactInfo(req, res) {
   const userInfo = req.body;
@@ -17,6 +31,15 @@ async function createUserWithContactInfo(req, res) {
   }
 };
 
+/**
+ * Get all users.
+ * @name GET /
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Array} - Array of user objects
+ */
 router.get("/", getUsers);
 async function getUsers(req, res) {
   try {
@@ -27,6 +50,15 @@ async function getUsers(req, res) {
   }
 };
 
+/**
+ * Get user profile by ID.
+ * @name GET /profile/:id
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Object} - User profile object
+ */
 router.get("/profile/:id", passport.isAuthenticated(), async (req, res) => {
   try {
     const user = await Users.findByPk(req.params.id, {
@@ -59,6 +91,15 @@ router.get("/profile/:id", passport.isAuthenticated(), async (req, res) => {
   }
 });
 
+/**
+ * Get user by ID.
+ * @name GET /:id
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Object} - User object
+ */
 router.get("/:id", getUser);
 async function getUser(req, res) {
   try {
@@ -69,6 +110,15 @@ async function getUser(req, res) {
   }
 };
 
+/**
+ * Update user by ID.
+ * @name PUT /:id
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Object} - Updated user object
+ */
 router.put("/:id", updateUser);
 async function updateUser(req, res) {
   const { id } = req.params;
@@ -89,6 +139,15 @@ async function updateUser(req, res) {
   }
 };
 
+/**
+ * Delete user by ID.
+ * @name DELETE /:id
+ * @function
+ * @async
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @returns {Object} - Success message
+ */
 router.delete('/:id', passport.isAuthenticated(), deleteUser);
 async function deleteUser(req, res) {
   try {

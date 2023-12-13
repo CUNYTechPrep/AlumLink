@@ -1,3 +1,7 @@
+/**
+ * Express middleware configuration.
+ * @module middlewares
+ */
 const app = require("express")();
 const corsMiddleware = require("./corsMiddleware");
 const jsonMiddleware = require("./jsonMiddleware");

@@ -1,21 +1,30 @@
+/**
+ * Middleware for user authentication.
+ * @module authenticationMiddleware
+ */
+
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const { Users } = require("../models");
 
+/**
+ * Compares a submitted password with a stored password hash.
+ * @param {string} submittedPassword - The password submitted by the user.
+ * @param {string} storedPasswordHash - The stored password hash.
+ * @returns {boolean} - Returns true if the passwords match, false otherwise.
+ */
 function passwordsMatch(submittedPassword, storedPasswordHash) {
   return bcrypt.compareSync(submittedPassword, storedPasswordHash);
 }
 
-/*
-  The following code runs at login time.
-
-  The usernameField and passwordField options refer to the HTTP requests
-  body parameter names. I've set this to look for an `email` parameter,
-  but you may prefer to use a `username` parameter instead of an email.
-
-  BEST PRACTICE: don't state why login failed to the user.
-*/
+/**
+ * Passport Local Strategy for user authentication.
+ * @param {object} options - Options for the LocalStrategy.
+ * @param {string} options.usernameField - The name of the username field in the HTTP request body.
+ * @param {string} options.passwordField - The name of the password field in the HTTP request body.
+ * @param {function} verify - The verification callback function.
+ */
 passport.use(
   new LocalStrategy(
     {
@@ -45,10 +54,20 @@ passport.use(
   )
 );
 
+/**
+ * Serializes the user object into the session.
+ * @param {object} user - The user object.
+ * @param {function} done - The callback function.
+ */
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+/**
+ * Deserializes the user object from the session.
+ * @param {number} id - The user ID.
+ * @param {function} done - The callback function.
+ */
 passport.deserializeUser((id, done) => {
   Users.findByPk(id)
     .then((user) => {
@@ -63,7 +82,10 @@ passport.deserializeUser((id, done) => {
     .catch((err) => done(err, null));
 });
 
-// Use this protect api routes that require a user to be logged in.
+/**
+ * Middleware to protect API routes that require a user to be logged in.
+ * @returns {function} - The middleware function.
+ */
 passport.isAuthenticated = () => (req, res, next) => {
   console.log("User:", req.user); // Check if user exists in the request
   if (req.user) {

@@ -1,3 +1,7 @@
+/**
+ * Express router for handling API routes.
+ * @module controllers/index
+ */
 const express = require("express");
 const router = express.Router();
 const contactInfoController = require("./contactInfo.js");

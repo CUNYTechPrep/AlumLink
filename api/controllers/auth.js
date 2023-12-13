@@ -1,16 +1,29 @@
+/**
+ * @file This file contains the authentication routes for signing up, logging in, and logging out users.
+ * @module controllers/auth
+ */
 
 const router = require("express").Router();
 const { Users, Contact_infos } = require("../models");
 const passport = require("../middlewares/authenticationMiddleware");
 
+/**
+ * Route for signing up a new user with contact information.
+ * @name POST /signup
+ * @function
+ * @async
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Object} The newly created user object.
+ */
 router.post("/signup", createUserWithContactInfo);
-  async function createUserWithContactInfo(req, res) {
+async function createUserWithContactInfo(req, res) {
   const userInfo = req.body;
   try {
     const newUser = await Users.create(userInfo);
     await Contact_infos.create({ user_id: newUser.id });
 
-     req.login(newUser, () => res.status(201).json(newUser));
+    req.login(newUser, () => res.status(201).json(newUser));
     req.flash("success", "Successfully signed up!");
   } catch (error) {
     req.flash("error", "Failed to sign up!");
@@ -18,6 +31,14 @@ router.post("/signup", createUserWithContactInfo);
   }
 };
 
+/**
+ * Route for logging in a user.
+ * @name POST /login
+ * @function
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Object} The authenticated user object.
+ */
 router.post("/login", passport.authenticate("local"), (req, res) => {
   // If this function gets called, authentication was successful.
   // `req.user` contains the authenticated user.
@@ -25,6 +46,14 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
   res.json(req.user);
 });
 
+/**
+ * Route for logging out a user.
+ * @name POST /logout
+ * @function
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ * @returns {Object} The logout status message.
+ */
 router.post("/logout", (req, res) => {
   req.logout((err) => {
     if (err) {
