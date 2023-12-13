@@ -1,3 +1,9 @@
+.site-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .footer {
   background-color: #222;
   font-family: Optima;
@@ -6,6 +12,7 @@
   bottom: 0;
   width: 100%;
   z-index: 10;
+  margin-top: auto;
 }
 
 .footer-content {

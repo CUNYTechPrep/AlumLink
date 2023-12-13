@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./HomeStyles.css";
 import Layout from "../components/Layout";
 import Button from "../components/Button";
-import { FaPaperPlane } from "react-icons/fa";
+import Auth from "../services/auth"; // Import Auth service
 
 const Home = () => {
   const backgroundImageUrl =
@@ -13,8 +13,9 @@ const Home = () => {
     <>
       <Layout>
         <section
-          className="custom-hero custom-hero--center custom-hero--overlay-layer "
-          style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
+          className="custom-hero custom-hero--center custom-hero--overlay-layer"
+          style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+        >
           <div className="custom-card-container custom-card-max-width-adaptive-sm home_para">
             <div className="custom-hero__label custom-card-margin-bottom-2xs">
               AlumLink
@@ -34,8 +35,10 @@ const Home = () => {
             </p>
 
             <div className="custom-hero__cta">
-              {/* Using the existing Button component */}
-              <Link to="/directory" className="btn-link">
+              <Link
+                to={Auth.isAuthenticated ? "/directory" : "/login"}
+                className="btn-link"
+              >
                 <Button text="Ready to Link?" />
               </Link>
             </div>
