@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { Users, Contact_infos } = db;
+const passport = require("../middlewares/authenticationMiddleware");
 
 router.post("/", createUserWithContactInfo);
 async function createUserWithContactInfo(req, res) {
@@ -26,7 +27,7 @@ async function getUsers(req, res) {
   }
 };
 
-router.get("/profile/:id", async (req, res) => {
+router.get("/profile/:id", passport.isAuthenticated(), async (req, res) => {
   try {
     const user = await Users.findByPk(req.params.id, {
       include: [
@@ -44,7 +45,7 @@ router.get("/profile/:id", async (req, res) => {
     }
 
     const formattedUserData = {
-      ...user.get(), 
+      ...user.get(),
       contactInfo: user.contactInfo.get(),
       experiences: user.experiences.map((exp) => ({
         ...exp.get(),
@@ -58,7 +59,7 @@ router.get("/profile/:id", async (req, res) => {
   }
 });
 
-router.get('/:id', getUser);
+router.get("/:id", getUser);
 async function getUser(req, res) {
   try {
     const user = await Users.findByPk(req.params.id);
@@ -68,7 +69,7 @@ async function getUser(req, res) {
   }
 };
 
-router.put('/:id', updateUser);
+router.put("/:id", updateUser);
 async function updateUser(req, res) {
   const { id } = req.params;
   const userInfo = req.body;
@@ -88,7 +89,7 @@ async function updateUser(req, res) {
   }
 };
 
-router.delete('/:id', deleteUser);
+router.delete('/:id', passport.isAuthenticated(), deleteUser);
 async function deleteUser(req, res) {
   try {
     await Contact_infos.destroy({

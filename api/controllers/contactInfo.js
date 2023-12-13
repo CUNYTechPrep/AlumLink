@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const db = require("../models");
 const { Contact_infos } = db;
+const passport = require("../middlewares/authenticationMiddleware");
+
 
 router.post("/", createContactInfo);
 async function createContactInfo(req, res) {

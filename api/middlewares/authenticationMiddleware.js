@@ -64,7 +64,12 @@ passport.deserializeUser((id, done) => {
 });
 
 // Use this protect api routes that require a user to be logged in.
-passport.isAuthenticated = () => (req, res, next) =>
-  req.user ? next() : res.sendStatus(401);
+passport.isAuthenticated = () => (req, res, next) => {
+  console.log("User:", req.user); // Check if user exists in the request
+  if (req.user) {
+    return next();
+  }
+  res.sendStatus(401);
+};
 
 module.exports = passport;
